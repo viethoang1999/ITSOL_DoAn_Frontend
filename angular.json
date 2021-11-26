@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "507dd0ad-d37c-428b-a22f-4c11c16de82c"
+    "analytics": "b5fd1571-06a1-4186-8a4a-0dd83e286c6d"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Itsol": {
+    "Itsol01": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Itsol",
+            "outputPath": "dist/Itsol01",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Itsol:build:production"
+              "browserTarget": "Itsol01:build:production"
             },
             "development": {
-              "browserTarget": "Itsol:build:development"
+              "browserTarget": "Itsol01:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Itsol:build"
+            "browserTarget": "Itsol01:build"
           }
         },
         "test": {
@@ -105,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "Itsol"
+  "defaultProject": "Itsol01"
 }

@@ -1,57 +1,52 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { RecruitmentComponent } from './recruitment/recruitment.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
 import { ContactComponent } from './contact/contact.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { QuanlytuyendungComponent } from './Quanlytuyendung/quanlytuyendung.component';
+import { ProfileComponent } from './profile/profile.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
-import { ListAdminComponent } from './list-admin/list-admin.component';
-import { FileComponent } from './file/file.component';
-
 
 const routes: Routes = [
   {
     path: '',
-    component:AdminComponent,
+    component: AdminComponent,
     children: [
       {
-        path: 'dashboard',
-        component:DashboardComponent
+        path: 'profile',
+        component: ProfileComponent,
       },
       {
         path: 'contact',
-        component:ContactComponent,
+        component: ContactComponent,
       },
       {
-        path: 'Quanlytuyendung',
-        loadChildren: () => import('./Quanlytuyendung/quanlytuyendung.module').then(m => m.QuanlytuyendungModule),
+        path: 'admin-list',
+        component: AdminListComponent,
       },
       {
-        path: 'file',
-        loadChildren: () => import('./file/file.module').then(m => m.FileModule),
+        path: '',
+        component: AdminHomeComponent,
       },
       {
-        path: 'list-admin',
-        loadChildren: () => import('./list-admin/list-admin.module').then(m => m.ListAdminModule),
-      }
-    ]
-  }
+        path: 'recruitment',
+        component: RecruitmentComponent,
+      },
+    ],
+  },
 ];
-
 @NgModule({
   declarations: [
+    AdminHomeComponent,
+    // RecruitmentComponent,
+    AdminListComponent,
     ContactComponent,
-    DashboardComponent,
-    QuanlytuyendungComponent,
-    ListAdminComponent,
-    FileComponent
-
+    ProfileComponent,
+    AdminComponent,
+    RecruitmentComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes)
-
-  ]
+  imports: [CommonModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class AdminModule { }
+export class AdminModule {}
